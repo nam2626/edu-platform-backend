@@ -46,7 +46,7 @@ public class CustomSecurityConfig {
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and()
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/auth/login", "/auth/test").permitAll() // 로그인과 테스트 API 허용
+                .requestMatchers("/auth/login", "/auth/signup").permitAll() // 로그인과 테스트 API 허용
                 .anyRequest().authenticated()
             )
             .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);

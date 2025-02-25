@@ -27,7 +27,7 @@ public class SampleDataInitializer implements CommandLineRunner {
         student.setEmail("student@codenation.com");
         student.setPassword(passwordEncoder.encode("student123")); // 암호화
         student.setName("Student");
-        student.setRole(Role.STUDENT);
+        student.setRole(Role.ROLE_STUDENT);
         userRepository.save(student);
 
         System.out.println("샘플 데이터 초기화 완료!");

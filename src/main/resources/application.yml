@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://nam3324.synology.me:32850/lec_db
+    username: lec_admin
+    password: q1w2e3
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+
+  mybatis:
+    mapper-locations: classpath:mapper/*.xml
+    type-aliases-package: kr.co.codenation.entity
+
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+
+  main:
+    allow-bean-definition-overriding: true
+
+# JWT 설정
+jwt:
+  secret: "ZWR1cGxhdGZvcm1iYWNrZW5ka2V5ZmlsZWZnZGRmZ2ZkZ2ZkZ3NkZ3NkaGduZA=="
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
